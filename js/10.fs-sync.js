@@ -1,12 +1,12 @@
-const { writeFileSync, readFileSync } = require("fs");
+const { readFileSync, writeFileSync } = require("fs");
 
-const firstFile = readFileSync("../content/first-file.txt", "utf-8");
-const secondFile = readFileSync("../content/second-file.txt", "utf-8");
+const first = readFileSync("../content/first-file.txt", "utf8");
+const second = readFileSync("../content/second-file.txt", "utf8");
 
-console.log(firstFile, secondFile);
+console.log(first, second);
 
 writeFileSync(
   "../content/result-sync.txt",
-  `here is the result: ${firstFile}\n${secondFile}`,
+  `this is the result of two files:\n${first}\n${second}`,
   { flag: "a" }
 );
